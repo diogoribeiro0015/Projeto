@@ -1,7 +1,7 @@
 /******************************************************************************
 * File Name: main.c
-* Authors: Diogo Ribeiro nº
-*          Ricardo Caetano nº
+* Authors: Diogo Ribeiro nº90051
+*          Ricardo Caetano nº90177
 * Last modified: /11/2108
 * COMMENTS
 *		Main program
