@@ -1,14 +1,17 @@
 /******************************************************************************
 * File Name: main.c
-* Authors: Diogo Ribeiro nº90051
-*          Ricardo Caetano nº90177
+* Authors: Diogo Ribeiro nº
+*          Ricardo Caetano nº
 * Last modified: /11/2108
 * COMMENTS
 *		Main program
 *****************************************************************************/
 
  #include <stdio.h>
- #include <stdlib>
+ #include <stdlib.h>
+ #include <string.h>
+ #include "estruturas.h"
+ #include "utils.h"
 
 /******************************************************************************
 * main ()
@@ -19,17 +22,13 @@
 *****************************************************************************/
 int main(int argc, char* argv[]) {
 
-  VerifyCommandLine(argc, argv[]);
-}
+  FILE *fp;
+  Mapa *Head;
 
-/******************************************************************************
-* VerifyCommandLine ()
-* Arguments: argc - number of command-line arguments
-*            argv - table of pointers for string arguments
-* Returns: -
-* Description: Will verify if the program was called correctly at command-line
-*****************************************************************************/
-void VerifyCommandLine(int argc, char* argv[]) {
+  VerifyCommandLine(argc, argv);
+  fp = OpenFile(argv);
+  Head = ReadFile(fp);
 
-  if (argc!=2 || strstr(argv[1], ".cities")==NULL) exit(1);
+
+  return(0);
 }
