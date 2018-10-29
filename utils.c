@@ -89,3 +89,32 @@ FILE *OpenFile(char *argv[]) {
 
   return(fp);
 }
+
+void RandomPlay(int x, int y, int x_hipotese[1000][8], int y_hipotese[1000][8])
+{
+    int i=0, max_mov=8;
+
+    x_hipotese[x][i]=x_hipotese[x][i]+2;
+    y_hipotese[y][i]=y_hipotese[y][i]+1;
+    i++;
+    x_hipotese[x][i]=x_hipotese[x][i]+2;
+    y_hipotese[y][i]=y_hipotese[y][i]-1;
+    i++;
+    x_hipotese[x][i]=x_hipotese[x][i]-2;
+    y_hipotese[y][i]=y_hipotese[y][i]+1;
+    i++;
+    x_hipotese[x][i]=x_hipotese[x][i]-2;
+    y_hipotese[y][i]=y_hipotese[y][i]-1;
+    i++;
+    x_hipotese[x][i]=x_hipotese[x][i]+1;
+    y_hipotese[y][i]=y_hipotese[y][i]+2;
+    i++;
+    x_hipotese[x][i]=x_hipotese[x][i]+1;
+    y_hipotese[y][i]=y_hipotese[y][i]-1;
+    i++;
+    x_hipotese[x][i]=x_hipotese[x][i]-1;
+    y_hipotese[y][i]=y_hipotese[y][i]+2;
+    i++;
+    x_hipotese[x][i]=x_hipotese[x][i]-1;
+    y_hipotese[y][i]=y_hipotese[y][i]-2;
+}
