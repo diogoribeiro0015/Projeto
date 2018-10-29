@@ -18,4 +18,6 @@ FILE *OpenFile(char *argv[]);
 
 Mapa *ReadFile(FILE *fp);
 
+void RandomPlay(int x, int y, int [1000][8], int [1000][8]);
+
 #endif
