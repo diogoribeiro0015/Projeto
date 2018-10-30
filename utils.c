@@ -78,7 +78,7 @@ void VerifyCommandLine(int argc, char* argv[]) {
 * OpenFile()
 * Arguments: argv - table of pointers for string arguments
 * Returns: pointer to file that already exists
-* Description: Will opne a file and verify if it was correctly open
+* Description: Will open a file and verify if it was correctly open
 *****************************************************************************/
 FILE *OpenFile(char *argv[]) {
   FILE *fp;
@@ -89,32 +89,101 @@ FILE *OpenFile(char *argv[]) {
 
   return(fp);
 }
-
-void RandomPlay(int x, int y, int x_hipotese[1000][8], int y_hipotese[1000][8])
+/******************************************************************************
+* RandomPlay()
+* Arguments: x and y point to start position,hipotese save position
+* Returns: all posible position
+* Description: Will save all posible position and verify if it is on the map
+*****************************************************************************/
+Coords* RandomPlay(Mapa* aux, int x, int y, int* tamanho)
 {
-    int i=0, max_mov=8;
-
-    x_hipotese[x][i]=x_hipotese[x][i]+2;
-    y_hipotese[y][i]=y_hipotese[y][i]+1;
-    i++;
-    x_hipotese[x][i]=x_hipotese[x][i]+2;
-    y_hipotese[y][i]=y_hipotese[y][i]-1;
-    i++;
-    x_hipotese[x][i]=x_hipotese[x][i]-2;
-    y_hipotese[y][i]=y_hipotese[y][i]+1;
-    i++;
-    x_hipotese[x][i]=x_hipotese[x][i]-2;
-    y_hipotese[y][i]=y_hipotese[y][i]-1;
-    i++;
-    x_hipotese[x][i]=x_hipotese[x][i]+1;
-    y_hipotese[y][i]=y_hipotese[y][i]+2;
-    i++;
-    x_hipotese[x][i]=x_hipotese[x][i]+1;
-    y_hipotese[y][i]=y_hipotese[y][i]-1;
-    i++;
-    x_hipotese[x][i]=x_hipotese[x][i]-1;
-    y_hipotese[y][i]=y_hipotese[y][i]+2;
-    i++;
-    x_hipotese[x][i]=x_hipotese[x][i]-1;
-    y_hipotese[y][i]=y_hipotese[y][i]-2;
+    int i=0;
+    Coords *hipotese=NULL;
+    if (CheckLimits(aux, x+2, y+1)==1) {
+      if(hipotese==NULL)
+      {
+        hipotese=(Coords*)malloc(sizeof(Coords));
+      }
+      hipotese[i].xcoord=x+2;
+      hipotese[i].ycoord=y+1;
+      i++;
+    }
+    if (CheckLimits(aux, x+2, y-1)==1) {
+      if(hipotese==NULL)
+      {
+        hipotese=(Coords*)malloc(sizeof(Coords));
+      }
+      else
+        hipotese=(Coords*)realloc(hipotese,i*sizeof(Coords));
+      hipotese[i].xcoord=x+2;
+      hipotese[i].ycoord=y-1;
+      i++;
+    }
+    if (CheckLimits(aux, x-2, y+1)==1) {
+      if(hipotese==NULL)
+      {
+        hipotese=(Coords*)malloc(sizeof(Coords));
+      }
+      else
+        hipotese=(Coords*)realloc(hipotese,i*sizeof(Coords));
+      hipotese[i].xcoord=x-2;
+      hipotese[i].ycoord=y+1;
+      i++;
+    }
+    if (CheckLimits(aux, x-2, y-1)==1) {
+      if(hipotese==NULL)
+      {
+        hipotese=(Coords*)malloc(sizeof(Coords));
+      }
+      else
+        hipotese=(Coords*)realloc(hipotese,i*sizeof(Coords));
+      hipotese[i].xcoord=x-2;
+      hipotese[i].ycoord=y-1;
+      i++;
+    }
+    if (CheckLimits(aux, x+1, y+2)==1) {
+      if(hipotese==NULL)
+      {
+        hipotese=(Coords*)malloc(sizeof(Coords));
+      }
+      else
+        hipotese=(Coords*)realloc(hipotese,i*sizeof(Coords));
+      hipotese[i].xcoord=x+1;
+      hipotese[i].ycoord=y+2;
+      i++;
+    }
+    if (CheckLimits(aux, x+1, y-2)==1) {
+      if(hipotese==NULL)
+      {
+        hipotese=(Coords*)malloc(sizeof(Coords));
+      }
+      else
+        hipotese=(Coords*)realloc(hipotese,i*sizeof(Coords));
+      hipotese[i].xcoord=x+1;
+      hipotese[i].ycoord=y-2;
+      i++;
+    }
+    if (CheckLimits(aux, x-1, y+2)==1) {
+      if(hipotese==NULL)
+      {
+        hipotese=(Coords*)malloc(sizeof(Coords));
+      }
+      else
+        hipotese=(Coords*)realloc(hipotese,i*sizeof(Coords));
+      hipotese[i].xcoord=x-1;
+      hipotese[i].ycoord=y+2;
+      i++;
+    }
+    if (CheckLimits(aux, x-1, y-2)==1) {
+      if(hipotese==NULL)
+      {
+        hipotese=(Coords*)malloc(sizeof(Coords));
+      }
+      else
+        hipotese=(Coords*)realloc(hipotese,i*sizeof(Coords));
+      hipotese[i].xcoord=x-1;
+      hipotese[i].ycoord=y-2;
+    }
+    *tamanho=i;
+    return (hipotese);
 }
