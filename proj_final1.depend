@@ -1,0 +1,57 @@
+# depslib dependency file v1.0
+1527223670 source:/home/Ribeiro/Área de Trabalho/proj_final1/functions.c
+	<SDL2/SDL.h>
+	<SDL2/SDL_ttf.h>
+	<SDL2/SDL_image.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"estruturas.h"
+
+1527075806 /home/Ribeiro/Área de Trabalho/proj_final1/estruturas.h
+
+1527216542 source:/home/Ribeiro/Área de Trabalho/proj_final1/main.c
+	<SDL2/SDL.h>
+	<SDL2/SDL_ttf.h>
+	<SDL2/SDL_image.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"estruturas.h"
+	"funcoes.h"
+
+1527213326 /home/Ribeiro/Área de Trabalho/proj_final1/funcoes.h
+
+1527216565 source:/home/Ribeiro/Área de Trabalho/proj_final1/partegrafica.c
+	<SDL2/SDL.h>
+	<SDL2/SDL_ttf.h>
+	<SDL2/SDL_image.h>
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	"estruturas.h"
+	"funcoes.h"
+
+1527204420 source:/home/ricardo14caetano/Downloads/proj_final1 (cópia)/functions.c
+	<SDL2/SDL.h>
+	<SDL2/SDL_ttf.h>
+	<SDL2/SDL_image.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"estruturas.h"
+
+1527075806 /home/ricardo14caetano/Downloads/proj_final1 (cópia)/estruturas.h
+
+1527204420 source:/home/ricardo14caetano/Downloads/proj_final1 (cópia)/main.c
+	<SDL2/SDL.h>
+	<SDL2/SDL_ttf.h>
+	<SDL2/SDL_image.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"estruturas.h"
+	"funcoes.h"
+
+1527204420 /home/ricardo14caetano/Downloads/proj_final1 (cópia)/funcoes.h
+
